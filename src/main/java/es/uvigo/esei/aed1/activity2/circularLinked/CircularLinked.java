@@ -3,53 +3,41 @@ package es.uvigo.esei.aed1.activity2.circularLinked;
 import es.uvigo.esei.aed1.commonLinked.Node;
 
 public class CircularLinked {
+    public CircularLinked() {
+    }
 
-  
+    public boolean isEmpty() {
+        return true;
+    }
 
-  public CircularLinked() {
-    
-  }
+    public int size() {
+        return 0;
+    }
 
-  public boolean isEmpty() {
-    
-    return true;
-  }
+    public int firstValue() throws NullPointerException {
+        return 0;
+    }
 
-  public int size() {
-    
-    return 0;
-  }
+    public boolean contains(int value) {
+        return true;
+    }
 
-  public int firstValue() throws NullPointerException {
-    
-    return 0;
-  }
+    public boolean contains2(int value) {
+        return true;
+    }
 
-  public boolean contains(int value) {
-    
-    return true;
-  }
+    public int numberOfOccurrences(int value) {
+        return 0;
+    }
 
-  public boolean contains2(int value) {
-    
-    return true;
-  }
+    public void addLast(int value) {
+    }
 
-  public int numberOfOccurrences(int value) {
-    
-    return 0;
-  }
+    public void removeFirst() {
+    }
 
-  public void addLast(int value) {
-    
-  }
-
-  public void removeFirst() {
-
-  }
-
-  @Override
-  public String toString() {
-    return "";
-  }
+    @Override
+    public String toString() {
+        return "";
+    }
 }

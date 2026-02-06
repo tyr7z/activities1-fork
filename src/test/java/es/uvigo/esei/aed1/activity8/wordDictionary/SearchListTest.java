@@ -1,4 +1,3 @@
-
 package es.uvigo.esei.aed1.activity8.wordDictionary;
 
 import es.uvigo.esei.aed1.tads.list.LinkedList;
@@ -10,8 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SearchListTest {
     private List<WordDictionary> dictionary;
 
-    
-  @BeforeEach
+    @BeforeEach
     public void setUp() {
         dictionary = new LinkedList<>();
         dictionary.addLast(new WordDictionary('A'));
@@ -40,11 +38,10 @@ public class SearchListTest {
         String word = "Bueno";
         assertTrue(SearchList.dictionarySearch(dictionary, word));
     }
-    
+
     @Test
     public void testDictionarySearchFalse() {
         String word = "Anita";
         assertFalse(SearchList.dictionarySearch(dictionary, word));
     }
-    
 }

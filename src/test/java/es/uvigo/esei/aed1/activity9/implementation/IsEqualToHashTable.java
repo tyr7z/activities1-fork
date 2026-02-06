@@ -35,7 +35,6 @@ public class IsEqualToHashTable<T> extends TypeSafeMatcher<HashTable<T>> {
         }
 
         return true;
-
     }
 
     /**
@@ -73,5 +72,4 @@ public class IsEqualToHashTable<T> extends TypeSafeMatcher<HashTable<T>> {
     public static <T> IsEqualToHashTable<T> equalToHashTable(HashTable<T> expected) {
         return new IsEqualToHashTable<>(expected);
     }
-
 }

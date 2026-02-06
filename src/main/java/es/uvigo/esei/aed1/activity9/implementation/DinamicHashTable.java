@@ -4,13 +4,11 @@ import es.uvigo.esei.aed1.tads.list.LinkedList;
 import es.uvigo.esei.aed1.tads.list.List;
 
 public class DinamicHashTable<T> implements HashTable<T> {
-
     private int numElems;
     private List<T>[] data;
 
     @SuppressWarnings("unchecked")
     public DinamicHashTable(int capacity) throws IllegalArgumentException {
-
     }
 
     public DinamicHashTable() {
@@ -23,20 +21,17 @@ public class DinamicHashTable<T> implements HashTable<T> {
 
     @Override
     public boolean add(T elem) {
-        
         return false;
     }
 
     @Override
     public boolean search(T elem) {
-        
         return false;
     }
 
     @Override
     public boolean remove(T elem) {
-        
-        return false;       
+        return false;
     }
 
     @Override
@@ -46,8 +41,6 @@ public class DinamicHashTable<T> implements HashTable<T> {
 
     @Override
     public T get() {
-
         return null;
     }
-
 }

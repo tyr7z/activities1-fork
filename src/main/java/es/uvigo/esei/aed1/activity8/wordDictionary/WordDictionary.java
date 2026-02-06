@@ -4,7 +4,6 @@ import es.uvigo.esei.aed1.tads.list.LinkedList;
 import es.uvigo.esei.aed1.tads.list.List;
 
 public class WordDictionary {
-
     private final char letter;
     private final List<String> wordsList;
 
@@ -20,5 +19,4 @@ public class WordDictionary {
     public List<String> getWordsList() {
         return wordsList;
     }
-
 }

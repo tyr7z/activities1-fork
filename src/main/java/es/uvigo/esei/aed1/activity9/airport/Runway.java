@@ -1,4 +1,3 @@
-
 package es.uvigo.esei.aed1.activity9.airport;
 
 import es.uvigo.esei.aed1.activity9.implementation.DinamicHashTable;
@@ -9,34 +8,29 @@ public class Runway {
     private int numRunway;
     private DinamicHashTable<String> destinationsPartners;
     private Queue<Flight> flightsOnStandby;
-    
-    public Runway(int numRunway){
-  
-    }
-    
-    public void assignDestination(String destination){
 
-        
+    public Runway(int numRunway) {
     }
-    
-    public void assignFlight(Flight v){
 
+    public void assignDestination(String destination) {
     }
-    
-    public Flight removeFlight(){
-        
+
+    public void assignFlight(Flight v) {
+    }
+
+    public Flight removeFlight() {
         return null;
     }
-    
-    public int getNumRunway(){
+
+    public int getNumRunway() {
         return 0;
     }
-    
-    public boolean isDestination(String destination){
+
+    public boolean isDestination(String destination) {
         return false;
     }
-    
-    public int numberFlight(){
+
+    public int numberFlight() {
         return 0;
-    }      
+    }
 }

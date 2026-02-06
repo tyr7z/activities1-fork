@@ -4,14 +4,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SearchPelletsTest {
+    private final int[][] coastGalician = { { 1, 0, 0, 1, 1, 0, 1 },
+            { 0, 1, 1, 0, 1, 1, 1 },
+            { 1, 0, 1, 1, 0, 0, 0 },
+            { 0, 1, 0, 1, 0, 1, 0 },
+            { 1, 1, 0, 0, 1, 1, 1 } };
 
-    private final int[][] coastGalician = {{1, 0, 0, 1, 1, 0, 1},
-                                            {0, 1, 1, 0, 1, 1, 1},
-                                            {1, 0, 1, 1, 0, 0, 0},
-                                            {0, 1, 0, 1, 0, 1, 0},
-                                            {1, 1, 0, 0, 1, 1, 1}};
-
-  
     /**
      * Test of searchPellets method, of class SearchPellets.
      */
@@ -23,5 +21,4 @@ public class SearchPelletsTest {
         int result = SearchPellets.searchPellets(coastGalician, beginning, fin);
         assertEquals(expResult, result);
     }
-
 }

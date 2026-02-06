@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 public class AirportTestCase {
-
     private Airport airport;
     private Flight flight1;
     private Flight flight2;
@@ -32,7 +31,7 @@ public class AirportTestCase {
     public void testConstructor() {
         Airport airport2 = new Airport(3);
         assertEquals(3, airport2.getNumRunways());
-        
+
         Airport airport1 = new Airport(1);
         assertEquals(1, airport1.getNumRunways());
     }
@@ -44,7 +43,7 @@ public class AirportTestCase {
     public void testAssignDestinationRunway() {
         airport.assignDestinationRunway(0, "Barcelona");
         airport.assignDestinationRunway(0, "Paris");
-        
+
         assertEquals(2, airport.getNumRunways());
     }
 
@@ -52,7 +51,7 @@ public class AirportTestCase {
     public void testAssignDestinationMultipleRunways() {
         airport.assignDestinationRunway(0, "Barcelona");
         airport.assignDestinationRunway(1, "Paris");
-        
+
         assertEquals(2, airport.getNumRunways());
     }
 
@@ -63,7 +62,7 @@ public class AirportTestCase {
     public void testAssignSingleFlight() {
         airport.assignDestinationRunway(0, "Paris");
         airport.assignFlightRunway(flight1);
-        
+
         assertEquals(1, airport.getNumAssignedFlights());
     }
 
@@ -72,11 +71,11 @@ public class AirportTestCase {
         airport.assignDestinationRunway(0, "Barcelona");
         airport.assignDestinationRunway(0, "Paris");
         airport.assignDestinationRunway(1, "Paris");
-        
+
         airport.assignFlightRunway(flight1);
         airport.assignFlightRunway(flight2);
         airport.assignFlightRunway(flight3);
-        
+
         assertEquals(3, airport.getNumAssignedFlights());
     }
 
@@ -84,10 +83,10 @@ public class AirportTestCase {
     public void testAssignFlightToProperRunway() {
         airport.assignDestinationRunway(0, "Barcelona");
         airport.assignDestinationRunway(1, "Paris");
-        
+
         airport.assignFlightRunway(flight1); // destino Paris -> pista 1
         airport.assignFlightRunway(flight2); // destino Barcelona -> pista 0
-        
+
         assertEquals(2, airport.getNumAssignedFlights());
     }
 
@@ -95,12 +94,12 @@ public class AirportTestCase {
     public void testAssignFlightBalancing() {
         airport.assignDestinationRunway(0, "Barcelona");
         airport.assignDestinationRunway(1, "Barcelona");
-        
+
         // Ambas pistas tienen el destino Barcelona
         airport.assignFlightRunway(flight2); // Barcelona
         airport.assignFlightRunway(flight3); // Barcelona
         airport.assignFlightRunway(flight4); // Barcelona
-        
+
         // Debe distribuir los vuelos de manera balanceada
         assertEquals(3, airport.getNumAssignedFlights());
     }
@@ -112,7 +111,7 @@ public class AirportTestCase {
     public void testTakeoffFlight() {
         airport.assignDestinationRunway(0, "Paris");
         airport.assignFlightRunway(flight1);
-        
+
         Flight departed = airport.takeoffFlight(0);
         assertEquals(flight1, departed);
         assertEquals(0, airport.getNumAssignedFlights());
@@ -121,7 +120,7 @@ public class AirportTestCase {
     @Test
     public void testTakeoffFlightFromEmptyRunway() {
         airport.assignDestinationRunway(0, "Paris");
-        
+
         Flight departed = airport.takeoffFlight(0);
         assertNull(departed);
     }
@@ -130,13 +129,13 @@ public class AirportTestCase {
     public void testTakeoffMultipleFlights() {
         airport.assignDestinationRunway(0, "Barcelona");
         airport.assignDestinationRunway(1, "Paris");
-        
+
         airport.assignFlightRunway(flight1);
         airport.assignFlightRunway(flight2);
-        
+
         Flight f1 = airport.takeoffFlight(1); // Paris
         Flight f2 = airport.takeoffFlight(0); // Barcelona
-        
+
         assertEquals(flight1, f1);
         assertEquals(flight2, f2);
         assertEquals(0, airport.getNumAssignedFlights());
@@ -149,10 +148,10 @@ public class AirportTestCase {
     public void testGetNumRunways() {
         Airport airport1 = new Airport(1);
         assertEquals(1, airport1.getNumRunways());
-        
+
         Airport airport3 = new Airport(3);
         assertEquals(3, airport3.getNumRunways());
-        
+
         Airport airport5 = new Airport(5);
         assertEquals(5, airport5.getNumRunways());
     }
@@ -170,13 +169,13 @@ public class AirportTestCase {
         airport.assignDestinationRunway(0, "Barcelona");
         airport.assignDestinationRunway(0, "Paris");
         airport.assignDestinationRunway(1, "Paris");
-        
+
         airport.assignFlightRunway(flight1);
         assertEquals(1, airport.getNumAssignedFlights());
-        
+
         airport.assignFlightRunway(flight2);
         assertEquals(2, airport.getNumAssignedFlights());
-        
+
         airport.assignFlightRunway(flight3);
         assertEquals(3, airport.getNumAssignedFlights());
     }
@@ -185,16 +184,16 @@ public class AirportTestCase {
     public void testGetNumAssignedFlightsAfterTakeoff() {
         airport.assignDestinationRunway(0, "Barcelona");
         airport.assignDestinationRunway(1, "Paris");
-        
+
         airport.assignFlightRunway(flight1);
         airport.assignFlightRunway(flight2);
         airport.assignFlightRunway(flight3);
-        
+
         assertEquals(3, airport.getNumAssignedFlights());
-        
+
         airport.takeoffFlight(0);
         assertEquals(2, airport.getNumAssignedFlights());
-        
+
         airport.takeoffFlight(1);
         assertEquals(1, airport.getNumAssignedFlights());
     }
@@ -207,24 +206,23 @@ public class AirportTestCase {
         airport.assignDestinationRunway(0, "Barcelona");
         airport.assignDestinationRunway(0, "Paris");
         airport.assignDestinationRunway(1, "Paris");
-        
+
         airport.assignFlightRunway(flight1); // Paris
         airport.assignFlightRunway(flight2); // Barcelona
         airport.assignFlightRunway(flight3); // Barcelona
         airport.assignFlightRunway(flight4); // Barcelona
         airport.assignFlightRunway(flight5); // Barcelona
         airport.assignFlightRunway(flight6); // Paris
-        
+
         assertEquals(6, airport.getNumAssignedFlights());
-        
+
         // Despegar vuelos en orden alternado
         Flight f1 = airport.takeoffFlight(0);
         assertNotNull(f1);
-        
+
         Flight f2 = airport.takeoffFlight(1);
         assertNotNull(f2);
-        
+
         assertEquals(4, airport.getNumAssignedFlights());
     }
-
 }

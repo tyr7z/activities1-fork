@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 public abstract class HashTableTestCase {
-
     private final Supplier<HashTable<Integer>> hashTableSupplier;
 
     public HashTableTestCase(Supplier<HashTable<Integer>> hashTableSupplier) {
@@ -185,14 +184,13 @@ public abstract class HashTableTestCase {
 
         Integer element1 = hashTable.get();
         Integer element2 = hashTable.get();
-        
+
         // Both elements should be non-null
         assertThat(element1 != null, is(true));
         assertThat(element2 != null, is(true));
-        
+
         // Both should be in the hash table
         assertThat(hashTable.search(element1), is(true));
         assertThat(hashTable.search(element2), is(true));
     }
-
 }

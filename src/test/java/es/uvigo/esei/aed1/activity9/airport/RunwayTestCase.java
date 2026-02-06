@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 public class RunwayTestCase {
-
     private Runway runway;
     private Flight flight1;
     private Flight flight2;
@@ -33,7 +32,7 @@ public class RunwayTestCase {
         runway.assignDestination("Barcelona");
         runway.assignDestination("Paris");
         runway.assignDestination("London");
-        
+
         assertTrue(runway.isDestination("Barcelona"));
         assertTrue(runway.isDestination("Paris"));
         assertTrue(runway.isDestination("London"));
@@ -81,7 +80,7 @@ public class RunwayTestCase {
         runway.assignFlight(flight1);
         runway.assignFlight(flight2);
         runway.assignFlight(flight3);
-        
+
         assertEquals(3, runway.numberFlight(), "Should have 3 flights assigned");
     }
 
@@ -89,7 +88,7 @@ public class RunwayTestCase {
     public void testRemoveFlight() {
         runway.assignFlight(flight1);
         runway.assignFlight(flight2);
-        
+
         Flight removed = runway.removeFlight();
         assertEquals(flight1, removed, "Should remove the first flight (FIFO)");
         assertEquals(1, runway.numberFlight(), "Should have 1 flight remaining");
@@ -100,11 +99,11 @@ public class RunwayTestCase {
         runway.assignFlight(flight1);
         runway.assignFlight(flight2);
         runway.assignFlight(flight3);
-        
+
         Flight f1 = runway.removeFlight();
         Flight f2 = runway.removeFlight();
         Flight f3 = runway.removeFlight();
-        
+
         assertEquals(flight1, f1);
         assertEquals(flight2, f2);
         assertEquals(flight3, f3);
@@ -129,13 +128,13 @@ public class RunwayTestCase {
     @Test
     public void testNumberFlightAfterOperations() {
         assertEquals(0, runway.numberFlight());
-        
+
         runway.assignFlight(flight1);
         assertEquals(1, runway.numberFlight());
-        
+
         runway.assignFlight(flight2);
         assertEquals(2, runway.numberFlight());
-        
+
         runway.removeFlight();
         assertEquals(1, runway.numberFlight());
     }
@@ -148,10 +147,9 @@ public class RunwayTestCase {
         Runway runway0 = new Runway(0);
         Runway runway1 = new Runway(1);
         Runway runway5 = new Runway(5);
-        
+
         assertEquals(0, runway0.getNumRunway());
         assertEquals(1, runway1.getNumRunway());
         assertEquals(5, runway5.getNumRunway());
     }
-
 }

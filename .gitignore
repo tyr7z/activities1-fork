@@ -48,6 +48,6 @@ nb-configuration.xml
 *.iws
 
 # Visual Studio Code
-.vscode/
+#.vscode/
 .history/
 *.vsix
