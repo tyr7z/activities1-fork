@@ -6,7 +6,7 @@ public class Activity0Exercise16 {
     // Exercise 16
 
     /**
-     * Calcula el maximo de los enteros almacenados en el array
+     * Calcula el máximo de los enteros almacenados en el array
      * 
      * @param array contiene los enteros
      * @return el valor mínimo

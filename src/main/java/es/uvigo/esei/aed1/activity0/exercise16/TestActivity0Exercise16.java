@@ -8,8 +8,8 @@ import static es.uvigo.esei.aed1.activity0.exercise16.Activity0Exercise16.readAr
 public class TestActivity0Exercise16 {
     public static void main(String[] args) {
         // Exercise 16
-        final int NUMVALUES = 10;
-        int[] array = new int[NUMVALUES];
+        final int NUM_VALUES = 10;
+        int[] array = new int[NUM_VALUES];
 
         readArray(array);
 

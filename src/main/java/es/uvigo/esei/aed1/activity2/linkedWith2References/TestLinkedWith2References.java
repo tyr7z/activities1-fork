@@ -14,14 +14,14 @@ public class TestLinkedWith2References {
 
         System.out.println("is empty?: " + list.isEmpty());
         System.out.println("The number of values is: " + list.size());
-        System.out.println("The value 10 is contained:  " + list.numberOfOccurrences(10) + " times");
+        System.out.println("The value 10 is contained: " + list.numberOfOccurrences(10) + " times");
         System.out.println("Is contained the 15? : " + list.contains(15));
         System.out.println("Remove value 10: ");
         list.remove(10);
-        System.out.println("The value 10 is contained:  " + list.numberOfOccurrences(10) + " times");
+        System.out.println("The value 10 is contained: " + list.numberOfOccurrences(10) + " times");
         System.out.println("Remove value 10: ");
         list.remove(10);
-        System.out.println("The value 10 is contained:  " + list.numberOfOccurrences(10) + " times");
+        System.out.println("The value 10 is contained: " + list.numberOfOccurrences(10) + " times");
         System.out.println("List: " + list);
     }
 }
