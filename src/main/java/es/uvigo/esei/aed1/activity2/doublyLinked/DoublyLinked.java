@@ -88,10 +88,10 @@ public class DoublyLinked {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (DoubleNode current = this.first; current != null; current = current.getNext()) {
-            builder.append(current.getValue()).append(" ");
+            sb.append(current.getValue()).append(' ');
         }
-        return builder.toString();
+        return sb.toString();
     }
 }

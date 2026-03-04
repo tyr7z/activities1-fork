@@ -31,10 +31,10 @@ public class MultipleNode {
     }
 
     public void setNextName(MultipleNode nextNode) {
-        nextName = nextNode;
+        this.nextName = nextNode;
     }
 
     public void setNextNumber(MultipleNode nextNode) {
-        nextNumber = nextNode;
+        this.nextNumber = nextNode;
     }
 }

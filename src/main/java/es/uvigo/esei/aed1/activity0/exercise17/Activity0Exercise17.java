@@ -30,7 +30,7 @@ public class Activity0Exercise17 {
      * @param matrix  que almacena números reales
      * @param message el mensaje a visualizar
      */
-    public static void readNotes(double[][] matrix, String message) {
+    public static void readGrades(double[][] matrix, String message) {
     }
 
     /**
@@ -40,6 +40,6 @@ public class Activity0Exercise17 {
      * @param matrix  que almacena numeros reales
      * @param message el mensaje a visualizar
      */
-    public static void printNotes(double[][] matrix, String message) {
+    public static void printGrades(double[][] matrix, String message) {
     }
 }

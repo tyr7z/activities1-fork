@@ -1,7 +1,7 @@
 package es.uvigo.esei.aed1.activity0.exercise17;
 
-import static es.uvigo.esei.aed1.activity0.exercise17.Activity0Exercise17.printNotes;
-import static es.uvigo.esei.aed1.activity0.exercise17.Activity0Exercise17.readNotes;
+import static es.uvigo.esei.aed1.activity0.exercise17.Activity0Exercise17.printGrades;
+import static es.uvigo.esei.aed1.activity0.exercise17.Activity0Exercise17.readGrades;
 import static es.uvigo.esei.aed1.activity0.exercise17.Activity0Exercise17.readNumber;
 
 public class TestActivity0Exercise17 {
@@ -11,10 +11,10 @@ public class TestActivity0Exercise17 {
         int numberSubjects;
         numberStudents = readNumber("enter the number of students: ");
         numberSubjects = readNumber("enter the number of subjects: ");
-        double[][] notes = new double[numberStudents][numberSubjects];
+        double[][] grades = new double[numberStudents][numberSubjects];
 
-        readNotes(notes, "reading of notes");
+        readGrades(grades, "reading of grades");
 
-        printNotes(notes, "display of notes");
+        printGrades(grades, "display of grades");
     }
 }
