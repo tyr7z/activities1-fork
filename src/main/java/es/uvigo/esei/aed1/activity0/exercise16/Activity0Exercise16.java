@@ -12,7 +12,12 @@ public class Activity0Exercise16 {
      * @return el valor mínimo
      */
     public static int maximum(int[] array) {
-        return 0;
+        int max = 0;
+        for (int n : array) {
+            if (n > max)
+                max = n;
+        }
+        return max;
     }
 
     /**
@@ -22,7 +27,12 @@ public class Activity0Exercise16 {
      * @return el valor mínimo
      */
     public static int minimum(int[] array) {
-        return 0;
+        int min = Integer.MAX_VALUE;
+        for (int n : array) {
+            if (n < min)
+                min = n;
+        }
+        return min;
     }
 
     /**
@@ -32,11 +42,16 @@ public class Activity0Exercise16 {
      * @return el valor promedio
      */
     public static double average(int[] array) {
-        return 0;
+        int sum = 0;
+        for (int n : array) {
+            sum += n;
+        }
+        return sum / array.length;
     }
 
-    public static int readInteger(String message) {
-        return 0;
+    public static int readInteger(Scanner scanner, String message) {
+        System.out.print(message);
+        return scanner.nextInt();
     }
 
     /**
@@ -45,5 +60,10 @@ public class Activity0Exercise16 {
      * @param array que almacenará los enteros
      */
     public static void readArray(int[] array) {
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = readInteger(scanner, "Introduce el valor #" + (i + 1) + ": ");
+        }
+        scanner.close();
     }
 }
