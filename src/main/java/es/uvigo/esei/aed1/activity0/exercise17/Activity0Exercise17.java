@@ -10,8 +10,9 @@ public class Activity0Exercise17 {
      * @param message el mensaje a visualizar
      * @return el número entero leido de teclado
      */
-    public static int readNumber(String message) {
-        return 0;
+    public static int readNumber(Scanner scanner, String message) {
+        System.out.print(message);
+        return scanner.nextInt();
     }
 
     /**
@@ -20,8 +21,9 @@ public class Activity0Exercise17 {
      * @param message el mensaje a visualizar
      * @return el número real leido de teclado
      */
-    public static double readDouble(String message) {
-        return 0;
+    public static double readDouble(Scanner scanner, String message) {
+        System.out.print(message);
+        return scanner.nextDouble();
     }
 
     /**
@@ -30,7 +32,14 @@ public class Activity0Exercise17 {
      * @param matrix  que almacena números reales
      * @param message el mensaje a visualizar
      */
-    public static void readGrades(double[][] matrix, String message) {
+    public static void readGrades(Scanner scanner, double[][] matrix, String message) {
+        System.out.println(message);
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println("Alumno " + (i + 1) + ":");
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[i][j] = readDouble(scanner, "Introduce una nota: ");
+            }
+        }
     }
 
     /**
@@ -41,5 +50,12 @@ public class Activity0Exercise17 {
      * @param message el mensaje a visualizar
      */
     public static void printGrades(double[][] matrix, String message) {
+        System.out.println(message);
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println("Alumno " + (i + 1) + ":");
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.println(matrix[i][j]);
+            }
+        }
     }
 }
