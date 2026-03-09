@@ -27,7 +27,7 @@ public class CircularLinked {
     }
 
     public boolean contains(int value) {
-        if (!isEmpty()) {
+        if (!this.isEmpty()) {
             Node current = last.getNext();
             while (current != this.last && !current.hasValue(value))
                 current = current.getNext();
@@ -42,11 +42,12 @@ public class CircularLinked {
     }
 
     public int numberOfOccurrences(int value) {
-        if (isEmpty())
+        if (this.isEmpty())
             return 0;
+
         int counter = 0;
         Node current = last.getNext();
-        for (int i = 0; i < numberOfValues; i++) {
+        for (int i = 1; i <= numberOfValues; i++) {
             if (current.hasValue(value))
                 counter++;
             current = current.getNext();
@@ -56,7 +57,7 @@ public class CircularLinked {
 
     public void addLast(int value) {
         Node newNode = new Node(value, null);
-        if (!isEmpty()) {
+        if (!this.isEmpty()) {
             newNode.setNext(this.last.getNext());
             this.last.setNext(newNode);
         } else {
@@ -67,9 +68,9 @@ public class CircularLinked {
     }
 
     public void removeFirst() {
-        if (!isEmpty()) {
+        if (!this.isEmpty()) {
             Node first = this.last.getNext();
-            if ((first == this.last) /* && (this.numberOfValues == 1) */)
+            if ((first == this.last) /* || (this.numberOfValues == 1) */)
                 this.last = null;
             else
                 this.last.setNext(first.getNext());
@@ -80,7 +81,7 @@ public class CircularLinked {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        if (!isEmpty()) {
+        if (!this.isEmpty()) {
             Node current = last.getNext();
             while (current != this.last)
                 current = current.getNext();

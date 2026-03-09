@@ -18,7 +18,7 @@ public class Node {
     }
 
     public Node getNext() {
-        return next;
+        return this.next;
     }
 
     public void setNext(Node next) {
