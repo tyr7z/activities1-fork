@@ -67,7 +67,7 @@ public class DoublyLinked {
             if (!current.hasValue(value))
                 continue;
 
-            if ((this.first == this.last) /* && (this.numberOfValues == 1) */) {
+            if ((this.first == this.last) /* || (this.numberOfValues == 1) */) {
                 this.first = null;
                 this.last = null;
             } else {
